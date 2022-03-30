@@ -1,0 +1,24 @@
+{
+  //"target": "terminus_exec",
+  //"cancel": "terminus_cancel_build",
+  "target": "terminus_open",
+
+  "auto_close": false,
+  "title": "Output",
+  "timeit": true,
+
+  "pre_window_hooks": [
+      ["travel_to_pane", {"direction": "right"}],
+      ["close_file"]
+  ],
+
+  "post_window_hooks": [
+    ["carry_file_to_pane"],
+  ],
+
+  "shell_cmd": "python3 -u \"$file\"",
+  "file_regex":"^[ ]*File \"(...*?)\", line ([0-9]*)",
+  "selector": "source.python",
+
+  "env": {"PYTHONIOENCODING": "utf-8"}
+}
